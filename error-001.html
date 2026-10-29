@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error 001 - Input Source Selection</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f6f8; color: #1a1a2e; line-height: 1.6;
+    padding: 24px 16px 40px;
+  }
+  .container { max-width: 560px; margin: 0 auto; }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
+    background: #e74c3c; padding: 4px 12px; border-radius: 4px; margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+  .card {
+    background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: #6b7280; margin-bottom: 4px;
+  }
+  .text { font-size: 15px; color: #333; }
+  .text em { font-style: italic; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="container">
+  <span class="badge">ERROR 001</span>
+  <h1>Input Source Selection</h1>
+
+  <div class="card">
+    <div class="label">Issue</div>
+    <div class="text">The selected input source does not match the active video signal.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Possible Cause</div>
+    <div class="text">The monitor is set to an input source that is not currently receiving a valid video signal from the connected device.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Recommended Action</div>
+    <div class="text">Set <em>Input Source</em> to <em>Auto</em> to allow the monitor to automatically detect and switch to an active input source. Alternatively, manually select the input port connected to the video source.</div>
+  </div>
+</div>
+</body>
+</html>

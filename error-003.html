@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error 003 - KVM Function Unavailable</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f6f8; color: #1a1a2e; line-height: 1.6;
+    padding: 24px 16px 40px;
+  }
+  .container { max-width: 560px; margin: 0 auto; }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
+    background: #3498db; padding: 4px 12px; border-radius: 4px; margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+  .card {
+    background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: #6b7280; margin-bottom: 4px;
+  }
+  .text { font-size: 15px; color: #333; }
+  .text em { font-style: italic; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="container">
+  <span class="badge">ERROR 003</span>
+  <h1>KVM Function Unavailable</h1>
+
+  <div class="card">
+    <div class="label">Issue</div>
+    <div class="text">The KVM function is unavailable because the USB upstream connection has not been established.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Possible Cause</div>
+    <div class="text">The USB-B upstream cable is not connected between the monitor and the host computer. Without this connection, the monitor cannot route USB peripherals to the intended host through its integrated KVM function.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Recommended Action</div>
+    <div class="text">Connect a USB-B upstream cable between the monitor's USB-B upstream port and a USB port on the host computer. Verify that the connection is secure and that the host computer recognizes the monitor's USB hub. Once the upstream connection is established, the KVM function should become available.</div>
+  </div>
+</div>
+</body>
+</html>

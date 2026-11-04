@@ -28,6 +28,61 @@
   }
   .text { font-size: 15px; color: #333; }
   .text em { font-style: italic; font-weight: 500; }
+
+  /* highlighted brand name */
+  .brand {
+    background: #fff3cd;
+    color: #8a5a00;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid #f0c36d;
+  }
+
+  /* diagram */
+  .diagram {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 22px;
+    margin: 20px 0 8px;
+    flex-wrap: wrap;
+  }
+  .diagram-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 150px;
+  }
+  .diagram-item svg {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .diagram-caption {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+  .diagram-caption.wrong { color: #c0392b; }
+  .diagram-caption.right { color: #1e7e34; }
+  .status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .status-icon.cross { background: #c0392b; }
+  .status-icon.check { background: #1e7e34; }
 </style>
 </head>
 <body>
@@ -47,7 +102,61 @@
 
   <div class="card">
     <div class="label">Recommended Action</div>
-    <div class="text">Replace the USB-C cable with one that supports video signal transmission (USB-C DP Alt Mode or Thunderbolt 3/4). Verify that the new cable is rated for the required resolution and refresh rate before connecting.</div>
+    <div class="text">Replace the USB-C cable with one that supports video signal transmission (USB-C DP Alt Mode or Thunderbolt 3/4). Verify that the new cable is rated for the required resolution and refresh rate before connecting. <strong>Recommendation: Use a <span class="brand">Lenovo</span> official USB-C cable to ensure full compatibility and reliable video signal transmission.</strong></div>
+
+    <!-- diagram: USB 2.0-only cable vs. video-capable USB-C cable -->
+    <div class="diagram">
+      <!-- wrong cable: USB 2.0-only -->
+      <div class="diagram-item">
+        <svg width="140" height="70" viewBox="0 0 140 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- USB-C connector left -->
+          <rect x="4" y="24" width="22" height="22" rx="8" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1.5"/>
+          <rect x="9" y="31" width="12" height="8" rx="2" fill="#7f8c8d"/>
+          <!-- cable body -->
+          <rect x="26" y="30" width="70" height="10" rx="5" fill="#95a5a6"/>
+          <!-- USB-C connector right -->
+          <rect x="96" y="24" width="22" height="22" rx="8" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1.5"/>
+          <rect x="101" y="31" width="12" height="8" rx="2" fill="#7f8c8d"/>
+          <!-- red cross overlay -->
+          <line x1="44" y1="16" x2="76" y2="54" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+          <line x1="76" y1="16" x2="44" y2="54" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+          <!-- USB 2.0 label on cable -->
+          <rect x="47" y="50" width="44" height="16" rx="8" fill="#fadbd8" stroke="#c0392b" stroke-width="1"/>
+          <text x="69" y="62" font-size="9" font-weight="700" fill="#c0392b" text-anchor="middle">USB 2.0 only</text>
+        </svg>
+        <div class="diagram-caption wrong">
+          <span class="status-icon cross">✕</span>No video signal
+        </div>
+        <div class="diagram-caption" style="font-weight:400; font-size:11px; color:#777;">
+          Data &amp; power only
+        </div>
+      </div>
+
+      <!-- correct cable: video-capable USB-C -->
+      <div class="diagram-item">
+        <svg width="140" height="70" viewBox="0 0 140 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- USB-C connector left -->
+          <rect x="4" y="24" width="22" height="22" rx="8" fill="#a9dfbf" stroke="#27ae60" stroke-width="1.5"/>
+          <rect x="9" y="31" width="12" height="8" rx="2" fill="#27ae60"/>
+          <!-- cable body -->
+          <rect x="26" y="29" width="70" height="12" rx="6" fill="#27ae60"/>
+          <!-- USB-C connector right -->
+          <rect x="96" y="24" width="22" height="22" rx="8" fill="#a9dfbf" stroke="#27ae60" stroke-width="1.5"/>
+          <rect x="101" y="31" width="12" height="8" rx="2" fill="#27ae60"/>
+          <!-- green check overlay -->
+          <polyline points="50,32 62,44 82,20" stroke="#1e7e34" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- DP Alt Mode label on cable -->
+          <rect x="34" y="50" width="70" height="16" rx="8" fill="#d5f5e3" stroke="#1e7e34" stroke-width="1"/>
+          <text x="69" y="62" font-size="9" font-weight="700" fill="#1e7e34" text-anchor="middle">USB-C DP Alt Mode</text>
+        </svg>
+        <div class="diagram-caption right">
+          <span class="status-icon check">✓</span>Video signal OK
+        </div>
+        <div class="diagram-caption" style="font-weight:400; font-size:11px; color:#777;">
+          Video + data + power
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>
